@@ -4,6 +4,7 @@ from tkinter import *
 
 
 root = Tk()
+
 fr = Frame(root)
 root.title("easySpace")
 root.geometry("1366x768")
