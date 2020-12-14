@@ -22,6 +22,14 @@ class UI():
         canv.create_oval(1040,420,1080, 460, fill = 'orange', outline = 'yellow')
     def Earth(event):#Земля
         canv.create_oval(1050,430,1090,470, fill = 'blue', outline = 'green')
+    def Mars(event):#Марс
+        canv.create_oval(1050,430,1090,470, fill = 'red', outline = 'red')
+    def Yupiter(event):#Юпитер
+        canv.create_oval(1080,500,1090,470, fill = 'red', outline = 'white')
+        canv.create_oval(1040,420,1080,460, fill = 'grey', outline = 'red')
+    def Saturn(event):#Сатурн
+        canv.create_oval(1050,430,1090,470, fill = 'red', outline = 'red')
+    
 #""" Здесь описаны методы отрисовки и логики при нажатии на клавиши  """        
     def Card_Mercury():#Кнопка Меркурия
         #Рисует карточку-кнопку с инфой по Меркурию 
@@ -37,6 +45,7 @@ class UI():
         button_earth = Button(root , width = 10, height = 5, bg ='grey', text = 'Земля')
         button_earth.bind("<Button-1>", UI.Earth )
         button_earth.pack(side = 'left')
+        
         
 # Здесь будет движение планет        
 # Здесь будет вывод текста при нажатии на клавишу (модет и не будет, не решил пока)
