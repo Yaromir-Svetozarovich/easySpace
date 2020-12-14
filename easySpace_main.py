@@ -10,6 +10,7 @@ root.geometry("1366x768")
 canv = Canvas(root,  bg='black')
 canv.pack(fill = BOTH, expand = 1)
 
+
 class UI():
     def __init__(self):
         self
