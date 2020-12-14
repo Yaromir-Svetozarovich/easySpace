@@ -15,17 +15,12 @@ class UI():
         self
     def Mercury(event):
         #Рисует овал(Меркурий)
-        canv.create_oval(600,40,700,140, fill = 'red', outline = 'yellow')
+        canv.create_oval(600,100,700,200, fill = 'red', outline = 'yellow')
     def Card_Mercury():
         #Рисует карточку-кнопку с инфой по Меркурию 
-        canv.create_rectangle(60, 600, 200, 700,
-                   fill='grey',
-                   outline='orange',
-                   width=3,
-                   activedash=(5, 4))
-        button_merc =Button(root, width = 140, height = 100)
+        button_merc =Button(root, width = 20, height = 10, bg ='grey',text = 'Меркурий')
         #Нажатие на кнопку ЛКМ
-        button_merc.bind("<Button-1>",  Mercury() )
+        button_merc.bind("<Button-1>",  UI.Mercury )
         button_merc.pack()    
     def Card_Venera():
         canv.create_restangle()
