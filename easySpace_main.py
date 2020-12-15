@@ -28,31 +28,48 @@ class UI():
         canv.create_oval(10,100,30,120, fill = 'red', outline = 'white')
         canv.create_oval(11,101,16,106, fill = 'grey', outline = 'red')
     def Saturn(event):#Сатурн
-        canv.create_oval(1050,430,1090,470, fill = 'red', outline = 'red')
+        canv.create_oval(100,100,200,200,  fill = '#F0D698', outline = 'grey')
+    def Uran(event):#Уран
+        canv.create_oval(100,100,200,200,  fill = '#87CEEB', outline = 'blue')
+    def Neptun(event):#Нептун
+        canv.create_oval(400,100,500,200,  fill = '#4169E1', outline = 'grey')
     
+
 #""" Здесь описаны методы отрисовки и логики при нажатии на клавиши  """        
     def Card_Mercury():#Кнопка Меркурия
         #Рисует карточку-кнопку с инфой по Меркурию 
-        button_merc =Button(root, width = 10, height = 5, bg ='grey',text = 'Меркурий')
+        button_merc =Button(root, width = 10, height = 2, bg ='grey',text = 'Меркурий')
         #Нажатие на кнопку ЛКМ
         button_merc.bind("<Button-1>",  UI.Mercury )
-        button_merc.pack(side = 'left')    
+        button_merc.pack(side = 'left',fill = 'both', expand = True)    
     def Card_Venera():#Кнопка Венеры
-        button_ven = Button(root , width = 10, height = 5, bg ='grey', text = 'Венера')
+        button_ven = Button(root , width = 10, height = 2, bg ='grey', text = 'Венера')
         button_ven.bind("<Button-1>", UI.Venera )
-        button_ven.pack(side = 'left')
+        button_ven.pack(side = 'left',fill = 'both', expand = True)
     def Card_Eath():#Кнопка Земли
-        button_earth = Button(root , width = 10, height = 5, bg ='grey', text = 'Земля')
+        button_earth = Button(root , width = 10, height = 2, bg ='grey', text = 'Земля')
         button_earth.bind("<Button-1>", UI.Earth )
-        button_earth.pack(side = 'left')
+        button_earth.pack(side = 'left',fill = 'both', expand = True)
     def Card_Mars():#Кнопка Марса
-        button_mars = Button(root , width = 10, height = 5, bg ='grey', text = 'Марс')
+        button_mars = Button(root , width = 10, height = 2, bg ='grey', text = 'Марс')
         button_mars.bind("<Button-1>", UI.Mars )
-        button_mars.pack(side = 'left')   
+        button_mars.pack(side = 'left',fill = 'both', expand = True)   
     def Card_Yupiter():#Кнопка Юпитера
-        button_yup = Button(root , width = 10, height = 5, bg ='grey', text = 'Юпитер')
+        button_yup = Button(root , width = 10, height = 2, bg ='grey', text = 'Юпитер')
         button_yup.bind("<Button-1>", UI.Yupiter )
-        button_yup.pack(side = 'left')      
+        button_yup.pack(side = 'left',fill = 'both', expand = True)  
+    def Card_Saturn():#Кнопка Юпитера
+        button_yup = Button(root , width = 10, height = 2, bg ='grey', text = 'Сатурн')
+        button_yup.bind("<Button-1>", UI.Saturn )
+        button_yup.pack(side = 'left',fill = 'both', expand = True)     
+    def Card_Uran():#Кнопка Урана
+        button_yup = Button(root , width = 10, height = 2, bg ='grey', text = 'Уран')
+        button_yup.bind("<Button-1>", UI.Uran )
+        button_yup.pack(side = 'left',fill = 'both', expand = True) 
+    def Card_Neptun():#Кнопка Нептуна
+        button_yup = Button(root , width = 10, height = 2, bg ='grey', text = 'Нептун')
+        button_yup.bind("<Button-1>", UI.Neptun )
+        button_yup.pack(side = 'left',fill = 'both', expand = True) 
 
 
 
@@ -66,4 +83,7 @@ UI.Card_Venera()
 UI.Card_Eath()
 UI.Card_Mars()
 UI.Card_Yupiter()
+UI.Card_Saturn()
+UI.Card_Uran()
+UI.Card_Neptun()
 root.mainloop()
