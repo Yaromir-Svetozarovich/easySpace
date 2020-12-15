@@ -1,6 +1,6 @@
 from tkinter import * 
 import math 
-
+from random import randint
 
 #Подготовка окна
 root = Tk()
@@ -16,6 +16,12 @@ class UI():
         self
 #""" Здесь описаны методы отрисовки планет  """    
     #Необходимо переделать расположение планет и метод задания координат планет, для их перемещения
+    def SKY():
+        for i in range(200) :
+            coord_x = randint(0,1366)
+            coord_y = randint(0,768)
+            r = randint(1,3)
+            canv.create_oval(coord_x-r,coord_y-r, coord_x+r, coord_y+r, fill = 'white')
     def Mercury(event):#Меркурий
         canv.create_oval(1000,400,1020,420, fill = 'red', outline = 'yellow')
     def Venera(event):#Венера
@@ -77,7 +83,9 @@ class UI():
 # Здесь будет вывод текста при нажатии на клавишу (модет и не будет, не решил пока)
 #Здесь хрень для улучшения графики(может тоже не будет, хз вообще)
        
-#Вызов методов   
+#Вызов методов 
+#
+UI.SKY()  
 UI.Card_Mercury()
 UI.Card_Venera()
 UI.Card_Eath()
