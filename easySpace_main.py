@@ -1,6 +1,6 @@
 from tkinter import * 
 import math 
-from random import randint
+from random import randint,choice
 
 #Подготовка окна
 root = Tk()
@@ -16,27 +16,40 @@ class UI():
         self
 #""" Здесь описаны методы отрисовки планет  """    
     #Необходимо переделать расположение планет и метод задания координат планет, для их перемещения
-    def SKY():
-        for i in range(200) :
-            coord_x = randint(0,1366)
-            coord_y = randint(0,768)
-            r = randint(1,3)
-            canv.create_oval(coord_x-r,coord_y-r, coord_x+r, coord_y+r, fill = 'white')
+
+    def SKY():# Генератор звездного неба
+        for i in range(2000) :
+            coord_x = randint(0,1366)# Выборка координаты x
+            coord_y = randint(0,768)# Выборка координаты y
+            r = randint(1,3)# Выборка радиуса звезды
+            color = choice(['white','#AFDAFC','#FB607F'])
+            canv.create_oval(coord_x-r,coord_y-r, coord_x+r, coord_y+r, fill = color ) #Рисует овал, в случайной позиции 
+
+    def Sun():#Солнце
+        canv.create_oval(583,200,783,400, fill = 'orange', outline = 'red' )
+
     def Mercury(event):#Меркурий
         canv.create_oval(1000,400,1020,420, fill = 'red', outline = 'yellow')
+
     def Venera(event):#Венера
         canv.create_oval(1040,420,1080, 460, fill = 'orange', outline = 'yellow')
+
     def Earth(event):#Земля
         canv.create_oval(1050,430,1090,470, fill = 'blue', outline = 'green')
+
     def Mars(event):#Марс
         canv.create_oval(1050,430,1090,470, fill = 'red', outline = 'red')
+
     def Yupiter(event):#Юпитер
         canv.create_oval(10,100,30,120, fill = 'red', outline = 'white')
         canv.create_oval(11,101,16,106, fill = 'grey', outline = 'red')
+
     def Saturn(event):#Сатурн
         canv.create_oval(100,100,200,200,  fill = '#F0D698', outline = 'grey')
+
     def Uran(event):#Уран
         canv.create_oval(100,100,200,200,  fill = '#87CEEB', outline = 'blue')
+
     def Neptun(event):#Нептун
         canv.create_oval(400,100,500,200,  fill = '#4169E1', outline = 'grey')
     
@@ -84,8 +97,9 @@ class UI():
 #Здесь хрень для улучшения графики(может тоже не будет, хз вообще)
        
 #Вызов методов 
-#
-UI.SKY()  
+
+UI.SKY() 
+UI.Sun() 
 UI.Card_Mercury()
 UI.Card_Venera()
 UI.Card_Eath()
