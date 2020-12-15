@@ -1,5 +1,5 @@
 from tkinter import * 
-import math
+import math 
 
 
 #Подготовка окна
@@ -15,7 +15,7 @@ class UI():
     def __init__(self):
         self
 #""" Здесь описаны методы отрисовки планет  """    
-    
+    #Необходимо переделать расположение планет и метод задания координат планет, для их перемещения
     def Mercury(event):#Меркурий
         canv.create_oval(1000,400,1020,420, fill = 'red', outline = 'yellow')
     def Venera(event):#Венера
@@ -25,8 +25,8 @@ class UI():
     def Mars(event):#Марс
         canv.create_oval(1050,430,1090,470, fill = 'red', outline = 'red')
     def Yupiter(event):#Юпитер
-        canv.create_oval(1080,500,1090,470, fill = 'red', outline = 'white')
-        canv.create_oval(1040,420,1080,460, fill = 'grey', outline = 'red')
+        canv.create_oval(10,100,30,120, fill = 'red', outline = 'white')
+        canv.create_oval(11,101,16,106, fill = 'grey', outline = 'red')
     def Saturn(event):#Сатурн
         canv.create_oval(1050,430,1090,470, fill = 'red', outline = 'red')
     
@@ -45,8 +45,17 @@ class UI():
         button_earth = Button(root , width = 10, height = 5, bg ='grey', text = 'Земля')
         button_earth.bind("<Button-1>", UI.Earth )
         button_earth.pack(side = 'left')
-        
-        
+    def Card_Mars():#Кнопка Марса
+        button_mars = Button(root , width = 10, height = 5, bg ='grey', text = 'Марс')
+        button_mars.bind("<Button-1>", UI.Mars )
+        button_mars.pack(side = 'left')   
+    def Card_Yupiter():#Кнопка Юпитера
+        button_yup = Button(root , width = 10, height = 5, bg ='grey', text = 'Юпитер')
+        button_yup.bind("<Button-1>", UI.Yupiter )
+        button_yup.pack(side = 'left')      
+
+
+
 # Здесь будет движение планет        
 # Здесь будет вывод текста при нажатии на клавишу (модет и не будет, не решил пока)
 #Здесь хрень для улучшения графики(может тоже не будет, хз вообще)
@@ -55,4 +64,6 @@ class UI():
 UI.Card_Mercury()
 UI.Card_Venera()
 UI.Card_Eath()
+UI.Card_Mars()
+UI.Card_Yupiter()
 root.mainloop()
