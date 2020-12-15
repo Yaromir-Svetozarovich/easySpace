@@ -59,17 +59,17 @@ class UI():
         button_yup.bind("<Button-1>", UI.Yupiter )
         button_yup.pack(side = 'left',fill = 'both', expand = True)  
     def Card_Saturn():#Кнопка Юпитера
-        button_yup = Button(root , width = 10, height = 2, bg ='grey', text = 'Сатурн')
-        button_yup.bind("<Button-1>", UI.Saturn )
-        button_yup.pack(side = 'left',fill = 'both', expand = True)     
+        button_sat = Button(root , width = 10, height = 2, bg ='grey', text = 'Сатурн')
+        button_sat.bind("<Button-1>", UI.Saturn )
+        button_sat.pack(side = 'left',fill = 'both', expand = True)     
     def Card_Uran():#Кнопка Урана
-        button_yup = Button(root , width = 10, height = 2, bg ='grey', text = 'Уран')
-        button_yup.bind("<Button-1>", UI.Uran )
-        button_yup.pack(side = 'left',fill = 'both', expand = True) 
+        button_ur = Button(root , width = 10, height = 2, bg ='grey', text = 'Уран')
+        button_ur.bind("<Button-1>", UI.Uran )
+        button_ur.pack(side = 'left',fill = 'both', expand = True) 
     def Card_Neptun():#Кнопка Нептуна
-        button_yup = Button(root , width = 10, height = 2, bg ='grey', text = 'Нептун')
-        button_yup.bind("<Button-1>", UI.Neptun )
-        button_yup.pack(side = 'left',fill = 'both', expand = True) 
+        button_nep = Button(root , width = 10, height = 2, bg ='grey', text = 'Нептун')
+        button_nep.bind("<Button-1>", UI.Neptun )
+        button_nep.pack(side = 'left',fill = 'both', expand = True) 
 
 
 
