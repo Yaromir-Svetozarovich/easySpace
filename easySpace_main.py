@@ -23,7 +23,7 @@ class UI():
             coord_y = randint(0,768)# Выборка координаты y
             r = randint(1,3)# Выборка радиуса звезды
             color = choice(['white','#AFDAFC','#FB607F'])
-            canv.create_oval(coord_x-r,coord_y-r, coord_x+r, coord_y+r, fill = color ) #Рисует овал, в случайной позиции 
+            canv.create_oval(coord_x-r,coord_y-r, coord_x+r, coord_y+r, fill = color ) #Рисует круг, в случайной позиции 
 
     def Sun():#Солнце
         canv.create_oval(583,200,783,400, fill = 'orange', outline = 'red' )
