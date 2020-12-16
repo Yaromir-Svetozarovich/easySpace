@@ -1,14 +1,14 @@
-from tkinter import * 
+import tkinter as tk
 import math 
 from random import randint,choice
 
 #Подготовка окна
-root = Tk()
-fr = Frame(root)
+root = tk.Tk()
+fr = tk.Frame(root)
 root.title("easySpace")
 root.geometry("1366x768")
-canv = Canvas(root,  bg='black')
-canv.pack(fill = BOTH, expand = 1)
+canv = tk.Canvas(root,  bg='black')
+canv.pack(fill = 'both', expand = 1)
 
 #Интерфейс пользователя
 class UI():
@@ -23,7 +23,7 @@ class UI():
             coord_y = randint(0,768)# Выборка координаты y
             r = randint(1,3)# Выборка радиуса звезды
             color = choice(['white','#AFDAFC','#FB607F'])
-            canv.create_oval(coord_x-r,coord_y-r, coord_x+r, coord_y+r, fill = color ) #Рисует овал, в случайной позиции 
+            canv.create_oval(coord_x-r,coord_y-r, coord_x+r, coord_y+r, fill = color ) #Рисует круг, в случайной позиции 
 
     def Sun():#Солнце
         canv.create_oval(583,200,783,400, fill = 'orange', outline = 'red' )
@@ -57,55 +57,59 @@ class UI():
 #""" Здесь описаны методы отрисовки и логики при нажатии на клавиши  """        
     def Card_Mercury():#Кнопка Меркурия
         #Рисует карточку-кнопку с инфой по Меркурию 
-        button_merc =Button(root, width = 10, height = 2, bg ='grey',text = 'Меркурий')
+        button_merc = tk.Button(root, width = 2, height = 2, bg ='black',text = 'Меркурий')
         #Нажатие на кнопку ЛКМ
         button_merc.bind("<Button-1>",  UI.Mercury )
-        button_merc.pack(side = 'left',fill = 'both', expand = True)    
+        button_merc.pack(side = 'left',fill = 'both', expand = True)
     def Card_Venera():#Кнопка Венеры
-        button_ven = Button(root , width = 10, height = 2, bg ='grey', text = 'Венера')
+        button_ven = tk.Button(root , width = 2, height = 2, bg ='black', text = 'Венера')
         button_ven.bind("<Button-1>", UI.Venera )
         button_ven.pack(side = 'left',fill = 'both', expand = True)
     def Card_Eath():#Кнопка Земли
-        button_earth = Button(root , width = 10, height = 2, bg ='grey', text = 'Земля')
+        button_earth = tk.Button(root , width = 2, height = 2, bg ='black', text = 'Земля')
         button_earth.bind("<Button-1>", UI.Earth )
         button_earth.pack(side = 'left',fill = 'both', expand = True)
     def Card_Mars():#Кнопка Марса
-        button_mars = Button(root , width = 10, height = 2, bg ='grey', text = 'Марс')
+        button_mars = tk.Button(root , width = 2, height = 2, bg ='black', text = 'Марс')
         button_mars.bind("<Button-1>", UI.Mars )
         button_mars.pack(side = 'left',fill = 'both', expand = True)   
     def Card_Yupiter():#Кнопка Юпитера
-        button_yup = Button(root , width = 10, height = 2, bg ='grey', text = 'Юпитер')
+        button_yup = tk.Button(root , width = 2, height = 2, bg ='black', text = 'Юпитер')
         button_yup.bind("<Button-1>", UI.Yupiter )
         button_yup.pack(side = 'left',fill = 'both', expand = True)  
     def Card_Saturn():#Кнопка Юпитера
-        button_sat = Button(root , width = 10, height = 2, bg ='grey', text = 'Сатурн')
+        button_sat = tk.Button(root , width = 2, height = 2, bg ='black', text = 'Сатурн')
         button_sat.bind("<Button-1>", UI.Saturn )
         button_sat.pack(side = 'left',fill = 'both', expand = True)     
     def Card_Uran():#Кнопка Урана
-        button_ur = Button(root , width = 10, height = 2, bg ='grey', text = 'Уран')
+        button_ur = tk.Button(root , width = 2, height = 2, bg ='black', text = 'Уран')
         button_ur.bind("<Button-1>", UI.Uran )
         button_ur.pack(side = 'left',fill = 'both', expand = True) 
     def Card_Neptun():#Кнопка Нептуна
-        button_nep = Button(root , width = 10, height = 2, bg ='grey', text = 'Нептун')
+        button_nep = tk.Button(root , width = 2, height = 2, bg ='black', text = 'Нептун')
         button_nep.bind("<Button-1>", UI.Neptun )
         button_nep.pack(side = 'left',fill = 'both', expand = True) 
 
 
 
 # Здесь будет движение планет        
-# Здесь будет вывод текста при нажатии на клавишу (модет и не будет, не решил пока)
+# Здесь будет вывод текста при нажатии на клавишу (может и не будет, не решил пока)
 #Здесь хрень для улучшения графики(может тоже не будет, хз вообще)
        
-#Вызов методов 
 
-UI.SKY() 
-UI.Sun() 
-UI.Card_Mercury()
-UI.Card_Venera()
-UI.Card_Eath()
-UI.Card_Mars()
-UI.Card_Yupiter()
-UI.Card_Saturn()
-UI.Card_Uran()
-UI.Card_Neptun()
+#Вызов методов 
+def Play():
+    UI.SKY() 
+    UI.Sun() 
+    UI.Card_Mercury()
+    UI.Card_Venera()
+    UI.Card_Eath()
+    UI.Card_Mars()
+    UI.Card_Yupiter()
+    UI.Card_Saturn()
+    UI.Card_Uran()
+    UI.Card_Neptun()
+
+#Запуск программы
+Play()    
 root.mainloop()
