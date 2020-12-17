@@ -33,7 +33,8 @@ class UI:
         info = tk.Toplevel(root, width=800,height = 600, bg ='black')        
         info.title("Info about planet") 
         info.geometry('800x600')
-        info.resizable(False,False) #Запрет на изменение размера окна 
+        info.resizable(False,False) #Запрет на изменение размера окна
+        info.grab_set() 
        # info.overrideredirect(True)# Удаляет обрамление окна, можно использовать, но хрень
         Lab = tk.Label(info, bg = 'black',fg = 'white',text = 'Меркурий', font = 'Arial 25')#Выводит имя планеты
         image1 = tk.PhotoImage(file = 'mercury.gif')#Задаем картинку для планеты
@@ -54,6 +55,7 @@ class UI:
         info.title("Info about planet") 
         info.geometry('800x600')
         info.resizable(False,False) #Запрет на изменение размера окна 
+        info.grab_set() 
        # info.overrideredirect(True)# Удаляет обрамление окна, можно использовать, но хрень
         Lab = tk.Label(info, bg = 'black',fg = 'white',text = 'Венера', font = 'Arial 25')#Выводит имя планеты
         image1 = tk.PhotoImage(file = 'venera.gif')#Задаем картинку для планеты
@@ -73,6 +75,7 @@ class UI:
         info.title("Info about planet") 
         info.geometry('800x600')
         info.resizable(False,False) #Запрет на изменение размера окна 
+        info.grab_set() 
        # info.overrideredirect(True)# Удаляет обрамление окна, можно использовать, но хрень
         Lab = tk.Label(info, bg = 'black',fg = 'white',text = 'Земля', font = 'Arial 25')#Выводит имя планеты
         image1 = tk.PhotoImage(file = 'earth.gif')#Задаем картинку для планеты
@@ -94,6 +97,7 @@ class UI:
         info.title("Info about planet") 
         info.geometry('800x600')
         info.resizable(False,False) #Запрет на изменение размера окна 
+        info.grab_set() 
        # info.overrideredirect(True)# Удаляет обрамление окна, можно использовать, но хрень
         Lab = tk.Label(info, bg = 'black',fg = 'white',text = 'Марс', font = 'Arial 25')#Выводит имя планеты
         image1 = tk.PhotoImage(file = 'mars.gif')#Задаем картинку для планеты
@@ -115,6 +119,7 @@ class UI:
         info.title("Info about planet") 
         info.geometry('800x600')
         info.resizable(False,False) #Запрет на изменение размера окна 
+        info.grab_set() 
        # info.overrideredirect(True)# Удаляет обрамление окна, можно использовать, но хрень
         Lab = tk.Label(info, bg = 'black',fg = 'white',text = 'Юпитер', font = 'Arial 25')#Выводит имя планеты
         image1 = tk.PhotoImage(file = 'yupiter.gif')#Задаем картинку для планеты
@@ -135,6 +140,7 @@ class UI:
         info.title("Info about planet") 
         info.geometry('800x600')
         info.resizable(False,False) #Запрет на изменение размера окна 
+        info.grab_set() 
        # info.overrideredirect(True)# Удаляет обрамление окна, можно использовать, но хрень
         Lab = tk.Label(info, bg = 'black',fg = 'white',text = 'Сатурн', font = 'Arial 25')#Выводит имя планеты
         image1 = tk.PhotoImage(file = 'saturn.gif')#Задаем картинку для планеты
@@ -156,6 +162,7 @@ class UI:
         info.title("Info about planet") 
         info.geometry('800x600')
         info.resizable(False,False) #Запрет на изменение размера окна 
+        info.grab_set() 
        # info.overrideredirect(True)# Удаляет обрамление окна, можно использовать, но хрень
         Lab = tk.Label(info, bg = 'black',fg = 'white',text = 'Уран', font = 'Arial 25')#Выводит имя планеты
         image1 = tk.PhotoImage(file = 'uran.gif')#Задаем картинку для планеты
@@ -177,6 +184,7 @@ class UI:
         info.title("Info about planet") 
         info.geometry('800x600')
         info.resizable(False,False) #Запрет на изменение размера окна 
+        info.grab_set() 
        # info.overrideredirect(True)# Удаляет обрамление окна, можно использовать, но хрень
         Lab = tk.Label(info, bg = 'black',fg = 'white',text = 'Нептун', font = 'Arial 25')#Выводит имя планеты
         image1 = tk.PhotoImage(file = 'neptun.gif')#Задаем картинку для планеты
@@ -198,6 +206,7 @@ class UI:
         info.title("Info about planet") 
         info.geometry('800x600')
         info.resizable(False,False) #Запрет на изменение размера окна 
+        info.grab_set() 
        # info.overrideredirect(True)# Удаляет обрамление окна, можно использовать, но хрень
         Lab = tk.Label(info, bg = 'black',fg = 'white',text = 'Плутон', font = 'Arial 25')#Выводит имя планеты
         image1 = tk.PhotoImage(file = 'pluton.gif')#Задаем картинку для планеты
@@ -218,6 +227,7 @@ class UI:
         info.title("Info about planet") 
         info.geometry('800x600')
         info.resizable(False,False) #Запрет на изменение размера окна 
+        info.grab_set() 
        # info.overrideredirect(True)# Удаляет обрамление окна, можно использовать, но хрень
         Lab = tk.Label(info, bg = 'black',fg = 'white',text = 'Плутон', font = 'Arial 25')#Выводит имя планеты
         image1 = tk.PhotoImage(file = 'pluton.gif')#Задаем картинку для планеты
