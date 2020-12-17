@@ -9,27 +9,16 @@ def window_deleted():
     
 #Подготовка окна
 root = tk.Tk()
-fr = tk.Frame(root, width=1366,height =758)#Создание слоя, на котором будет располагаться canvas
-fr.pack(fill = 'both', expand = 1)
 root.title("easySpace")
 root.geometry("1366x768")
+
+
 root.protocol('WM_DELETE_WINDOW', window_deleted)#Проверка на выход из программы
 
-canv = tk.Canvas(fr, height = 710,bg='black')#Размещение слоя с графикой
-canv.pack(fill = 'both', expand = 1)
-
-fr2 =tk.Frame(root, width = 1366, height = 10, bg ='black')# Создание слоя для размещения кнопок
+fr2 =tk.Frame(root, width = 1366, height = 50, bg ='black')# Создание слоя для размещения кнопок
 fr2.pack(fill = 'both', expand= 1)
+
 root.resizable(False, False)#Запрет на изменение размера окна
-
-
-#Реализация генератора звезд
-for i in range(4000) :
-    coord_x = randint(0,1366)# Выборка координаты x
-    coord_y = randint(0,768)# Выборка координаты y
-    r = randint(1,2)# Выборка радиуса звезды
-    color = choice(['white','#AFDAFC','#FB607F'])
-    canv.create_oval(coord_x-r,coord_y-r, coord_x+r, coord_y+r, fill = color ) #Рисует круг, в случайной позиции
 
 #Интерфейс пользователя
 
@@ -205,6 +194,26 @@ class UI:
 
     def Pluton(event):
                      #Подготовка окна с информацией о планете
+        info = tk.Toplevel(root, width=800,height = 600, bg ='black')        
+        info.title("Info about planet") 
+        info.geometry('800x600')
+        info.resizable(False,False) #Запрет на изменение размера окна 
+       # info.overrideredirect(True)# Удаляет обрамление окна, можно использовать, но хрень
+        Lab = tk.Label(info, bg = 'black',fg = 'white',text = 'Плутон', font = 'Arial 25')#Выводит имя планеты
+        image1 = tk.PhotoImage(file = 'pluton.gif')#Задаем картинку для планеты
+        Lab_img = tk.Label(info,image =image1,borderwidth =0)
+        Lab_img.image_ref = image1
+        text = tk.Text(info,bg = 'black',fg = 'white', borderwidth = 0 ,width = 700, height = 300 , font = 'Arial 10', wrap = 'word', state = 'normal')# Задаем текст  с инфой о планете
+        text.insert(1.0,'Плутон – это карликовая планета Солнечной системы, транснептуновый объект (крупнейший в поясе Койпера) и десятое по массе тело, обращающееся вокруг Солнца, после 8 планет (без учета их спутников) и, предположительно, Эриды.')
+        text.insert(5.1,'\nФизические характеристики:\nРасстояние от солнца - 39,23 астр. ед.;\nПериод обращения - 245 лет;\nПериод вращения - -6,38 сут.;\nДиаметр - 2376 км;\nКол-во спутников -5; \nПлотность - 1,860 г/куб.см.')
+        Lab.pack()# Пакуйте его, ребята!
+        Lab_img.pack()
+        text.pack(side = 'bottom')
+        text.configure(state = 'disabled')
+
+
+    def Sun(event):
+        #Подготовка окна с информацией о планете
         info = tk.Toplevel(root, width=800,height = 600, bg ='black')        
         info.title("Info about planet") 
         info.geometry('800x600')
