@@ -22,6 +22,7 @@ fr2 =tk.Frame(root, width = 1366, height = 10, bg ='black')# Создание с
 fr2.pack(fill = 'both', expand= 1)
 root.resizable(False, False)#Запрет на изменение размера окна
 
+
 #Реализация генератора звезд
 for i in range(4000) :
     coord_x = randint(0,1366)# Выборка координаты x
@@ -30,50 +31,38 @@ for i in range(4000) :
     color = choice(['white','#AFDAFC','#FB607F'])
     canv.create_oval(coord_x-r,coord_y-r, coord_x+r, coord_y+r, fill = color ) #Рисует круг, в случайной позиции
 
-
-
-
-
-
 #Интерфейс пользователя
-
-
-def NewWindow(event):
-    #Подготовка окна с информацией о планете
-    info = tk.Toplevel(root, width=800,height =600, bg ='black')
-    info.title("Info about planet") 
-    info.geometry('800x600')
-    info.resizable(False,False) #Запрет на изменение размера окна 
-    #info.overrideredirect(True) Удаляет обрамление окна, можно использовать, но хрень
-    Lab = tk.Label(info, bg = 'black',fg = 'white',text = 'Планета', font = 'Arial 25')
-    Lab.pack(side = 'top')
-
 
 class UI:
     def __init__(self):
         pass
 #""" Здесь описаны методы отрисовки планет  """    
     #Необходимо переделать расположение планет и метод задания координат планет, для их перемещения
-    
-    def Sun():#Солнце
-    #Подготовка окна с информацией о планете
-        info = tk.Toplevel(root, width=800,height =600, bg ='black')
-        info.title("Info about planet") 
-        info.geometry('800x600')
-        info.resizable(False,False) #Запрет на изменение размера окна 
-        #info.overrideredirect(True) Удаляет обрамление окна, можно использовать, но хрень
-        Lab = tk.Label(info, bg = 'black',fg = 'white',text = 'Солнце', font = 'Arial 25')
-        Lab.pack(side = 'top')
 
     def Mercury(event):#Меркурий
         #Подготовка окна с информацией о планете
-        info = tk.Toplevel(root, width=800,height =600, bg ='black')
+        info = tk.Toplevel(root, width=800,height = 600, bg ='black')        
         info.title("Info about planet") 
         info.geometry('800x600')
         info.resizable(False,False) #Запрет на изменение размера окна 
-        #info.overrideredirect(True) Удаляет обрамление окна, можно использовать, но хрень
-        Lab = tk.Label(info, bg = 'black',fg = 'white',text = 'Меркурий', font = 'Arial 25')
-        Lab.pack(side = 'top')
+       # info.overrideredirect(True)# Удаляет обрамление окна, можно использовать, но хрень
+        Lab = tk.Label(info, bg = 'black',fg = 'white',text = 'Меркурий', font = 'Arial 25')#Выводит имя планеты
+
+        image1 = tk.PhotoImage(file = 'mercury.gif')#Задаем картинку для планеты
+        Lab_img = tk.Label(info,image =image1,borderwidth =0)
+        Lab_img.image_ref = image1
+
+        text = tk.Text(info,bg = 'black',fg = 'white', borderwidth = 0 ,width = 700, height = 300 , font = 'Arial 12', wrap = 'word', state = 'normal')# Задаем текст  с инфой о планете
+        text.insert(1.0,'Меркурий — ближайшая к Солнцу планета. Ни воды, ни воздуха на Меркурии нет. \nИз-за того что Меркурий так близок к светилу, дневная температура на этой планете почти +450°С.')
+        text.insert(5.1,'\nФизические характеристики:\nРасстояние от солнца - 0,39 астр. ед.;\nПериод обращения - 88 дней;\nПериод вращения - 58,6 сут.;\nДиаметр - 4878 км;\nПлотность - 5,5 г/куб.см.')
+
+
+
+        Lab.pack()# Пакуйте его, ребята!
+        Lab_img.pack()
+        text.pack(side = 'bottom')
+        text.configure(state = 'disabled')# Хитрость! Блокируем ввод пользователем. Т.о я н@@@@ал систему и вывел сложный текст!
+        
 
     def Venera(event):#Венера
         #Подготовка окна с информацией о планете
@@ -152,9 +141,7 @@ class UI:
 #
 #Данный метод вызывает окно, с информацией о планете. На вход нужно подать название планеты, а далее программа выведет рисунок планеты и информацию о ней. 
 
-        
-
-
+    
 # Далее кнопки можно заменить на планеты, т.е вывод окна с инфой о планете при нажатии на планету
     def Card_Mercury():#Кнопка Меркурия
         button_merc = tk.Button(fr2, width = 2, height = 2, bg ='black', fg = 'white',text = 'Меркурий')
