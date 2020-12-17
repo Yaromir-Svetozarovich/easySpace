@@ -9,10 +9,11 @@ sin = lambda degs: math.sin(math.radians(degs))
 cos = lambda degs: math.cos(math.radians(degs))
 
 root = Tk()
-fr = Frame(root)
 root.title("easySpace")
-root.geometry("1920x1080")
-canvas = Canvas(root,  bg='black')
+root.geometry("1270x720")
+root.wm_attributes("-transparent", 'purple')
+
+canvas = Canvas(root, width=1270, height=720, bg='black')
 canvas.pack(fill=BOTH, expand=1)
 
 
@@ -33,8 +34,8 @@ class UI(object):
 
 def SKY():  # Генератор звездного неба
     for i in range(2000):
-        coord_x = randint(0, 1920)  # Выборка координаты x
-        coord_y = randint(0, 1080)  # Выборка координаты y
+        coord_x = randint(0, 1270)  # Выборка координаты x
+        coord_y = randint(0, 720)  # Выборка координаты y
         r = random()  # Выборка радиуса звезды
         color = choice(['white', 'light blue'])
         canvas.create_oval(coord_x-r, coord_y-r, coord_x+r, coord_y+r, fill=color)  # Рисует овал, в случайной позиции
@@ -120,30 +121,81 @@ def update_position(canvas, id, UI_obj, path_iter):
     dx, dy = UI_obj.x - oldx, UI_obj.y - oldy  # количество движения
     canvas.move(id, dx, dy)  # перемещение овала на холсте
     # повторение после задержки
-    canvas.after(DELAY, update_position, canvas, id, UI_obj, path_iter)
+    root.after(DELAY, update_position, canvas, id, UI_obj, path_iter)
 
 
-sun_obj = UI(960, 540, 35)
-mercury_obj = UI(960+60, 540, 4)
-venus_obj = UI(960+100, 540, 12)
-earth_obj = UI(960+140, 540, 12)
-mars_obj = UI(960+180, 540, 8)
-jupiter_obj = UI(960+250, 540, 25)
-saturn_obj = UI(960+320, 540, 20)
-uranium_obj = UI(960+370, 540, 15)
-neptune_obj = UI(960+420, 540, 15)
-pluto_obj = UI(960+460, 540, 7)
+sun_obj = UI(635, 360, 25)
+mercury_obj = UI(635+40, 360, 3)
+venus_obj = UI(635+80, 360, 8)
+earth_obj = UI(635+120, 360, 8)
+mars_obj = UI(635+160, 360, 6)
+jupiter_obj = UI(635+200, 360, 20)
+saturn_obj = UI(635+240, 360, 16)
+uranium_obj = UI(635+280, 360, 12)
+neptune_obj = UI(635+320, 360, 12)
+pluto_obj = UI(635+345, 360, 6)
+
+
+def click_sun(event):
+    print('Нажали на Солнце')
+
+
+def click_mercury(event):
+    print('Нажали на Меркурий')
+
+
+def click_venus(event):
+    print('Нажали на Венеру')
+
+
+def click_earth(event):
+    print('Нажали на Землю')
+
+
+def click_mars(event):
+    print('Нажали на Марс')
+
+
+def click_jupiter(event):
+    print('Нажали на Юпитер')
+
+
+def click_saturn(event):
+    print('Нажали на Сатурн')
+
+
+def click_uranium(event):
+    print('Нажали на Уран')
+
+
+def click_neptune(event):
+    print('Нажали на Нептун')
+
+
+def click_pluto(event):
+    print('Нажали на Плутон')
+
 
 sun = canvas.create_oval(sun_obj.bounds(), fill='yellow', width=0)
+canvas.tag_bind(sun, '<Button-1>', click_sun)
 mercury = canvas.create_oval(mercury_obj.bounds(), fill='grey', width=0)
+canvas.tag_bind(mercury, '<Button-1>', click_mercury)
 venus = canvas.create_oval(venus_obj.bounds(), fill='orange', width=0)
+canvas.tag_bind(venus, '<Button-1>', click_venus)
 earth = canvas.create_oval(earth_obj.bounds(), fill='light blue', width=0)
+canvas.tag_bind(earth, '<Button-1>', click_earth)
 mars = canvas.create_oval(mars_obj.bounds(), fill="red", width=0)
+canvas.tag_bind(mars, '<Button-1>', click_mars)
 jupiter = canvas.create_oval(jupiter_obj.bounds(), fill='brown', width=0)
+canvas.tag_bind(jupiter, '<Button-1>', click_jupiter)
 saturn = canvas.create_oval(saturn_obj.bounds(), fill='light gray', width=0)
+canvas.tag_bind(saturn, '<Button-1>', click_saturn)
 uranium = canvas.create_oval(uranium_obj.bounds(), fill='light green', width=0)
+canvas.tag_bind(uranium, '<Button-1>', click_uranium)
 neptune = canvas.create_oval(neptune_obj.bounds(), fill='blue', width=0)
+canvas.tag_bind(neptune, '<Button-1>', click_neptune)
 pluto = canvas.create_oval(pluto_obj.bounds(), fill='dark grey', width=0)
+canvas.tag_bind(pluto, '<Button-1>', click_pluto)
 
 orbital_radius_mercury = math.hypot(sun_obj.x - mercury_obj.x, sun_obj.y - mercury_obj.y)
 orbital_radius_venus = math.hypot(sun_obj.x - venus_obj.x, sun_obj.y - venus_obj.y)
@@ -186,4 +238,3 @@ root.after(DELAY, update_position, canvas, uranium, uranium_obj, path_iter_urani
 root.after(DELAY, update_position, canvas, neptune, neptune_obj, path_iter_neptune)
 root.after(DELAY, update_position, canvas, pluto, pluto_obj, path_iter_pluto)
 root.mainloop()
-
