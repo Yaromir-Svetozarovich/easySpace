@@ -238,3 +238,4 @@ root.after(DELAY, update_position, canvas, uranium, uranium_obj, path_iter_urani
 root.after(DELAY, update_position, canvas, neptune, neptune_obj, path_iter_neptune)
 root.after(DELAY, update_position, canvas, pluto, pluto_obj, path_iter_pluto)
 root.mainloop()
+
