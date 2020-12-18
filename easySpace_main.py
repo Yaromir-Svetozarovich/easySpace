@@ -324,10 +324,13 @@ class Planet(object):
 
 
 def SKY():  # Генератор звездного неба
-    image1 = PhotoImage(file='sun.gif')  # Задаем картинку для планеты
-    Lab_img = Label(root, image=image1, borderwidth=0)
-    Lab_img.image_ref = image1
-    Lab_img.pack()
+    for i in range(2000):
+        coord_x = randint(0, 1270)  # Выборка координаты x
+        coord_y = randint(0, 720)  # Выборка координаты y
+        r = random()  # Выборка радиуса звезды
+        color = choice(['white', 'light blue'])
+        canvas.create_oval(coord_x-r, coord_y-r, coord_x+r, coord_y+r, fill=color)  # Рисует овал, в случайной позиции
+
 
 def circular_path1(x, y, radius, delta_ang, start_ang=0):
     # Бесконечно генерирует координаты кругового пути через каждые градусы delta_ang
