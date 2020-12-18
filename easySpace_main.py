@@ -221,27 +221,6 @@ class UI:
         text.configure(state = 'disabled')
 
 
-    def Sun(event):
-        #Подготовка окна с информацией о планете
-        info = tk.Toplevel(root, width=800,height = 600, bg ='black')        
-        info.title("Info about planet") 
-        info.geometry('800x600')
-        info.resizable(False,False) #Запрет на изменение размера окна 
-        info.grab_set() 
-       # info.overrideredirect(True)# Удаляет обрамление окна, можно использовать, но хрень
-        Lab = tk.Label(info, bg = 'black',fg = 'white',text = 'Плутон', font = 'Arial 25')#Выводит имя планеты
-        image1 = tk.PhotoImage(file = 'pluton.gif')#Задаем картинку для планеты
-        Lab_img = tk.Label(info,image =image1,borderwidth =0)
-        Lab_img.image_ref = image1
-        text = tk.Text(info,bg = 'black',fg = 'white', borderwidth = 0 ,width = 700, height = 300 , font = 'Arial 10', wrap = 'word', state = 'normal')# Задаем текст  с инфой о планете
-        text.insert(1.0,'Плутон – это карликовая планета Солнечной системы, транснептуновый объект (крупнейший в поясе Койпера) и десятое по массе тело, обращающееся вокруг Солнца, после 8 планет (без учета их спутников) и, предположительно, Эриды.')
-        text.insert(5.1,'\nФизические характеристики:\nРасстояние от солнца - 39,23 астр. ед.;\nПериод обращения - 245 лет;\nПериод вращения - -6,38 сут.;\nДиаметр - 2376 км;\nКол-во спутников -5; \nПлотность - 1,860 г/куб.см.')
-        Lab.pack()# Пакуйте его, ребята!
-        Lab_img.pack()
-        text.pack(side = 'bottom')
-        text.configure(state = 'disabled')
-
-
         
 
     
