@@ -287,7 +287,7 @@ class UI:
         info.geometry('800x600')
         info.resizable(False, False)  # Запрет на изменение размера окна
         info.grab_set()
-        # info.overrideredirect(True)# Удаляет обрамление окна, можно использовать
+        #info.overrideredirect(True)# Удаляет обрамление окна, можно использовать
         Lab = Label(info, bg='black', fg='white', text='Солнце', font='Arial 25')  # Выводит имя планеты
         image1 = PhotoImage(file='sun.gif')  # Задаем картинку для планеты
         Lab_img = Label(info, image=image1, borderwidth=0)
@@ -324,10 +324,10 @@ class Planet(object):
 
 
 def SKY():  # Генератор звездного неба
-    for i in range(2000):
+    for i in range(4000):
         coord_x = randint(0, 1270)  # Выборка координаты x
         coord_y = randint(0, 720)  # Выборка координаты y
-        r = random()  # Выборка радиуса звезды
+        r = randint(0,1)  # Выборка радиуса звезды
         color = choice(['white', 'light blue'])
         canvas.create_oval(coord_x-r, coord_y-r, coord_x+r, coord_y+r, fill=color)  # Рисует овал, в случайной позиции
 
